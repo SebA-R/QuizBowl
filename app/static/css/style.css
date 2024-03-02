@@ -170,13 +170,13 @@ li {
 
 a {
     text-decoration: none;
-    color: white; 
+    color: var(--header-color); 
     font-weight: bold;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: var(--header-color);
+    color: var(--accent-color);
 }
 
 p {

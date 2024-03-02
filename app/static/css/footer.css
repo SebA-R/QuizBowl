@@ -7,6 +7,7 @@ main {
   background-position: center;
   background-repeat: repeat;
   background-size: 4%;
+  min-height: 85vh
 }
 
 footer{
@@ -22,6 +23,7 @@ footer{
   background-repeat: repeat;
   background-size: 8%;
 }
+
 footer p{
     color: #a1a1a1;
     column-count: 2;

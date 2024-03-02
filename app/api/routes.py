@@ -19,7 +19,6 @@ def parse_answer(answer_string):
 def is_answer_correct(user_answer, correct_answer):
     return any(fuzz.ratio(user_answer.lower(), answer.lower()) > 80 for answer in correct_answer)
 
-
 @api.route('/check-answer', methods=['POST'])
 def check_answer():
     data = request.get_json()

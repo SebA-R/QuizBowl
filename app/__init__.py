@@ -20,6 +20,6 @@ def create_app():
 
     app.register_blueprint(api)
     app.register_blueprint(site)
-    app.register_blueprint(admin_bp, url_prefix='/admin')
+    app.register_blueprint(admin_bp)
 
     return app
