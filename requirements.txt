@@ -1,0 +1,8 @@
+Flask==2.2.5
+Flask_Admin==1.6.1
+Flask_Migrate==4.0.4
+flask_sqlalchemy==3.0.5
+Flask_WTF==1.1.1
+SQLAlchemy==2.0.12
+WTForms==3.0.1
+fuzzywuzzy==0.18.0

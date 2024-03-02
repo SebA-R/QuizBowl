@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css')}}">
+{% endblock %}
+
+{% block title %}Register{% endblock %}
+
+{% block header %}Register Today!{% endblock %}
+
+{% block content %}
+<div class="section">
+    <div class="container">
+        <div class="row full-height justify-content-center">
+            <div class="col-12 text-center align-self-center py-5">
+                <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                    <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+                    <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                    <label for="reg-log"></label>
+                    <div class="card-3d-wrap mx-auto">
+                        <div class="card-3d-wrapper">
+                            <div class="card-front">
+                                <div class="center-wrap">
+                                    <div class="section text-center">
+                                        <h4 class="mb-4 pb-3">Log In</h4>
+                                        <form id="login_form" action="/register" method="post">
+                                            {{ login_form.csrf_token }}
+                                            <div class="form-group">
+                                                {{ login_form.username(class="form-style", id="username",
+                                                placeholder="Your Username") }}
+                                                <i class="input-icon">👤</i>
+                                            </div>
+                                            <div class="form-group">
+                                                {{ login_form.password(class="form-style", id="password",
+                                                placeholder="Your Password") }}
+                                                <i class="input-icon">🔒</i>
+                                            </div>
+                                            {{ login_form.submit(class="btn mt-4", id="logsubmit") }}
+                                            <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your
+                                                    password?</a></p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <div class="center-wrap">
+                                    <div class="section text-center">
+                                        <h4 class="mb-4 pb-3">Sign Up</h4>
+                                        <form id="reg_form" action="/register" method="post">
+                                            {{ reg_form.csrf_token }}
+                                            <div class="form-group">
+                                                {{ reg_form.username(class="form-style", id="regusername",
+                                                placeholder="Your Username") }}
+                                                <i class="input-icon">👤</i>
+                                            </div>
+                                            <div class="form-group">
+                                                {{ reg_form.email(class="form-style", id="email", placeholder="Your Email") }}
+                                                <i class="input-icon">@</i>
+                                            </div>
+                                            <div class="form-group">
+                                                {{ reg_form.password(class="form-style", id="regpassword",
+                                                placeholder="Your Password") }}
+                                                <i class="input-icon">🔒</i>
+                                            </div>
+                                            <div class="form-group">
+                                                {{ reg_form.confirm_password(class="form-style", id="confirm-password",
+                                                placeholder="Confirm Your Password") }}
+                                                <i class="input-icon">🔒</i>
+                                            </div>
+                                            {{ reg_form.submit(class="btn mt-4", id="regsubmit") }}
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

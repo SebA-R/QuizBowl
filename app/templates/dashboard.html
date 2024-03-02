@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
+{% endblock %}
+{% block script %}
+<script src="{{ url_for('static', filename='js/dashboard.js')}}"></script>
+{% endblock %}
+{% block header %}It's Bowlin' Time!{% endblock %}
+{% block content %}
+
+<!-- Buttons -->
+<div id="buttons">
+    <button id="get-btn">Get Question</button>
+    <button id="open-modal-btn">Question Options</button>
+    <button id="pause-btn" style="display: none;">Pause</button>
+    <button id="buzz-btn" style="display: none;">Buzz</button>
+</div>
+
+<!-- Modal for setting options -->
+<div id="myModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="options">
+        <h2>Set Options</h2>
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty" name="difficulty">
+            <option value="">-- Select Difficulty --</option>
+            <option value="1">Middle School</option>
+            <option value="2">Easy High School</option>
+            <option value="3">Regular High School</option>
+            <option value="4">Hard High School</option>
+            <option value="5">National High School</option>
+            <option value="6">● / Easy College</option>
+            <option value="7">●● / Medium College</option>
+            <option value="8">●●● / Regionals College</option>
+            <option value="9">●●●● / Nationals College</option>
+            <option value="10">Open</option>
+        </select>
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <option value="">-- Select Category --</option>
+            <option value="Literature">Literature</option>
+            <option value="History">History</option>
+            <option value="Science">Science</option>
+            <option value="Fine Arts">Fine Arts</option>
+            <option value="Religion">Religion</option>
+            <option value="Mythology">Mythology</option>
+            <option value="Philosophy">Philosophy</option>
+            <option value="Social Science">Social Science</option>
+            <option value="Current Events">Current Events</option>
+            <option value="Geography">Geography</option>
+            <option value="Other Academic">Other Academic</option>
+            <option value="Trash">Trash</option>
+        </select>
+        <label for="minYear">Minimum Year:</label>
+        <input type="range" id="minYear" min="2010" max="2024" value="2010" oninput="updateMinYear(this.value)">
+        <span id="minYearValue">2010</span>
+        <label for="maxYear">Maximum Year:</label>
+        <input type="range" id="maxYear" min="2010" max="2024" value="2024" oninput="updateMaxYear(this.value)">
+        <span id="maxYearValue">2024</span>
+    </div>
+  </div>
+</div>
+
+<!-- Question content will be displayed here -->
+<div id="question-section">
+    
+</div>
+<div id="answer-section" style="display: none;">
+   
+</div>
+<script>
+    function updateMinYear(val) {
+        document.getElementById('minYearValue').innerText = val;
+    }
+
+    function updateMaxYear(val) {
+        document.getElementById('maxYearValue').innerText = val;
+    }
+</script>
+{% endblock %}

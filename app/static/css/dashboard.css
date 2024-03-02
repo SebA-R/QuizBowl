@@ -1,0 +1,94 @@
+/* Button styling */
+#buttons {
+    margin-top: 20px;
+}
+
+#buttons button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#buttons button:hover {
+    background-color: #45a049;
+}
+
+/* Question section styling */
+#question-section {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+#answer-section {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 20px;
+    border: var(--header-color) solid 1px;
+    border-radius: 5px;
+    text-justify: left;
+}
+
+h3 {
+    margin: 0 0 5px 0;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: var(--text-color);
+}
+
+.modal-content {
+  background-color: var(--background-color);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 15px;
+  width: 40%;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.column {
+  flex: 1;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
